@@ -65,6 +65,6 @@ hold off;
 figure
 RBF_AM1
 title('Stability region')
-
 legend('MQ-RBF AM1')
+
 
