@@ -1,22 +1,25 @@
-function plot_stability(x,y,R,color)
-    % Funzione per disegnare la regione di assoluta stabilità
-    % per metodi ad un passo
-    % Preso spunto da PlotS di Leveque
-
-    % Crea una griglia nel piano complesso
-    % x = linspace(-4, 2, 400);
-    % y = linspace(-3, 3, 400);
-    [X, Y] = meshgrid(x, y);
-    % Z = X + 1i*Y;
-
-    % Calcola il modulo della funzione di amplificazione
-    Rmag = abs(R);
-
-    %stable = (Rmag <= 1);  
-
-    contour(X, Y, Rmag, [1 1], color, 'LineWidth', 2);  % contorno dove |R(z)|=1
-    axis equal;
-    xlabel('\Re(h\lambda)');
-    ylabel('\Im(h\lambda)');
-    %title('Regione di stabilità |R(z)| <= 1');
-    grid on;
+function plot_stability(x, y, R, color)
+%
+% Usage:   plot_stability(x, y, R, color)
+% Purpose: the function plots the absolute stability region 
+%          of a one step method
+% Input:   x = row vector defining the real axis of the 
+%              complex plane
+%          y = row vector defining the imaginary axis of the 
+%              complex plane
+%          R = matrix obtained from the method's 
+%              characteristic polynomial, the absolute 
+%              stability region is given by |R| <= 1.
+%      color = line color specification for the contour plot 
+% Output:  the function does not return outputs, it produces 
+%          a contour plot showing where |R| = 1, which 
+%          represents the boundary of the absolute stability 
+%          region
+%
+[X, Y] = meshgrid(x,y);
+Rmag = abs(R); 
+contour(X, Y, Rmag, [1 1], color, 'LineWidth', 2); 
+axis equal;
+xlabel('\Re(h\lambda)');
+ylabel('\Im(h\lambda)');
+grid on;
