@@ -1,21 +1,3 @@
-% function err = ab3(f, u_es, a, b, u0, N)
-%     h  = (b-a)/N;
-%     t = linspace(a,b,N+1)';
-%     u = zeros(1, N+1); 
-%     u(1) = u0;
-%     u(2) = u_es(t(2));
-%     u(3) = u_es(t(3));
-%     % u(2) = rk4_step(f, u(1), h);
-%     % u(3) = rk4_step(f, u(2), h);
-%     for n = 3:N
-%         fn   = f(t(n),u(n));
-%         fn_m1 = f(t(n-1),u(n-1));
-%         fn_m2 = f(t(n-2),u(n-2));
-%         u(n+1) = u(n) + (h/12) * (23*fn - 16*fn_m1 + 5*fn_m2);
-%     end
-%     err = abs(u(end) - u_es(b));
-% end
-
 function err = ab3(f, u_es, a, b, u0, N)
 %
 % Usage:    err = ab3(f, u_es, a, b, u0, N)
@@ -49,3 +31,4 @@ for n = 3:N
     end
 end
 err = abs(u(end) - u_es(b));
+
