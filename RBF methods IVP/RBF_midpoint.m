@@ -14,14 +14,12 @@ function err = RBF_midpoint(f, u_es, a, b, u0, N, Meth)
 %               MA-RBF), '2' GA-RBF 
 % Output: err = global error at the final point t = b
 %
-h = (b-a)/N;
-t = linspace(a,b,N+1)';
+h = (b-a) / N;
+t = linspace(a, b, N+1)';
 u = zeros(N+1, 1); 
 u(1) = u0;
 u(2) = u_es(t(2));
 u(3) = u_es(t(3));
-% u(2) = rk4_step(f, u(1), h);
-% u(3) = rk4_step(f, u(2), h);
 for n = 2:N-1
     fn = f(t(n),u(n)); 
     fn_m1 = f(t(n-1),u(n-1));
@@ -37,3 +35,4 @@ for n = 2:N-1
     end
 end
 err = abs(u(end) - u_es(b));
+
