@@ -1,7 +1,10 @@
 % The following script computes and shows the global errors 
 % versus various N and local convergence orders for Euler's method,
 % MQ-RBF and MA-RBF Euler's method applied to the IVP: 
-% u'(t) = -u^2, u(0) = 1. 
+% u'(t) = -u^2, u(0) = 1
+
+addpath('Classic methods IVP')
+addpath('RBF methods IVP')
 
 f = @(t,u) -u.^2;
 u_esatta = @(t) 1./(1 + t); 
@@ -51,4 +54,5 @@ set(gca, 'XTick', N, 'XTickLabel', string(N));
 axis([10 400 10^(-7) 10^(-1)])
 title('Global errors for $u'' = -u^2$', 'Interpreter', 'latex');
 axis square; grid on; box on;
+
 hold off;
