@@ -31,5 +31,5 @@ for n = 2:N
         warning('Method not available')
     end
 end
-
 err = abs(u(end) - u_es(b));
+
