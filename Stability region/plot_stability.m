@@ -16,10 +16,11 @@ function plot_stability(x, y, R, color)
 %          represents the boundary of the absolute stability 
 %          region
 %
-[X, Y] = meshgrid(x,y);
+[X,Y] = meshgrid(x,y);
 Rmag = abs(R); 
 contour(X, Y, Rmag, [1 1], color, 'LineWidth', 2); 
 axis equal;
 xlabel('\Re(h\lambda)');
 ylabel('\Im(h\lambda)');
 grid on;
+
