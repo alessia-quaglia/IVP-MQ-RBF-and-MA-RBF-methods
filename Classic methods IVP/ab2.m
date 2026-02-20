@@ -12,7 +12,7 @@ function err = ab2(f, u_es, a, b, u0, N)
 %           N = controls the step size h
 % Output: err = global error at the final point t = b
 %
-h = (b - a) / N;
+h = (b-a) / N;
 t = linspace(a, b, N+1)';
 u = zeros(N+1, 1);
 u(1) = u0;
@@ -28,4 +28,5 @@ for n = 2:N
     end
 end
 err = abs(u(end) - u_es(b));
+
 
