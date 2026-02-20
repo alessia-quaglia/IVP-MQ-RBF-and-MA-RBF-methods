@@ -91,5 +91,5 @@ hold off;
 figure
 RBF_AM1
 title('Stability region')
-
 legend('MA-RBF AM1')
+
