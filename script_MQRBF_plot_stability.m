@@ -1,3 +1,5 @@
+addpath('Stability region')
+
 % Figure 2.1(a)
 x = linspace(-4, 2, 400);
 y = linspace(-3, 3, 400);
@@ -60,4 +62,5 @@ hold off;
 figure
 RBF_AM1
 title('Stability region')
+
 legend('MQ-RBF AM1')
