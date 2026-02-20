@@ -5,6 +5,9 @@
 % corresponding MQ-RBF and MA-RBF modifications applied to the IVP: 
 % u'(t) = -u^2, u(0) = 1
 
+addpath('Classic methods IVP')
+addpath('RBF methods IVP')
+
 f = @(t,u) -u.^2;
 u_esatta = @(t) 1./(1 + t); 
 a = 0;
@@ -65,4 +68,5 @@ set(gca, 'XTick', N, 'XTickLabel', string(N));
 axis([10 400 10^(-9) 10^(-2)])
 title('Global errors for $u'' = -u^2$', 'Interpreter', 'latex');
 axis square; grid on; box on;
+
 hold off;
