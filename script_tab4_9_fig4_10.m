@@ -3,6 +3,9 @@
 % Adams-Bashforth method, MQ-RBF and MA-RBF Euler's method applied to the IVP: 
 % u'= -4t^3u^2, u(-10) = 1/10001
 
+addpath('Classic methods IVP')
+addpath('RBF methods IVP')
+
 f = @(t,u) -4.*t.^3.*u.^2;
 u_esatta = @(t) 1./(t.^4+1);
 a = -10;
