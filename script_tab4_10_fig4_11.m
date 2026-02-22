@@ -8,7 +8,7 @@ addpath('Classic methods IVP')
 addpath('RBF methods IVP')
 
 f = @(t,u) -4.*t.^3.*u.^2;
-u_esatta = @(t) 1./(t.^4+1);
+u_exact = @(t) 1./(t.^4+1);
 a = -10;
 b = 0;
 u0 = 1/10001;
@@ -20,9 +20,9 @@ err_GAmidpoint = zeros(size(N));
 
 for i = 1:length(N)
     n = N(i);
-    err_ab3(i) = ab3(f, u_esatta, a, b, u0, n);
-    err_MQmidpoint(i) = RBF_midpoint(f, u_esatta, a, b, u0, n, 1);
-    err_GAmidpoint(i) = RBF_midpoint(f, u_esatta, a, b, u0, n, 2);
+    err_ab3(i) = ab3(f, u_exact, a, b, u0, n);
+    err_MQmidpoint(i) = RBF_midpoint(f, u_exact, a, b, u0, n, 1);
+    err_GAmidpoint(i) = RBF_midpoint(f, u_exact, a, b, u0, n, 2);
 end
 
 ord_ab3 = [NaN, log2(err_ab3(1:end-1)./err_ab3(2:end))];
@@ -54,5 +54,6 @@ axis([200 7000 10^(-7) 10^(0)])
 title('Global errors for $u'' = -4t^3u^2$', 'Interpreter', 'latex');
 axis square; grid on; box on;
 hold off;
+
 
 
