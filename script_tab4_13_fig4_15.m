@@ -4,6 +4,9 @@
 % p = 1/2 and L=h^(-1/2), p=1 and L=0, p=1 and L=h^(-1) applied to the IVP:
 % u' = u + 2, u(0) = -1
 
+addpath('Classic methods IVP')
+addpath('RBF methods IVP')
+
 f = @(t,u) u + 2;
 u_esatta = @(t) exp(t) - 2; 
 a = 0;
@@ -64,3 +67,4 @@ set(gca, 'XTick', N, 'XTickLabel', string(N));
 title('Global errors for $u'' = u+2$', 'Interpreter', 'latex');
 axis square; grid on; box on;
 hold off;
+
