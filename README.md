@@ -1,3 +1,5 @@
+# MQ-RBF and MA-RBF methods for IVP
+
 This repository contains the code developed for my thesis work: "*Modification of Classical Methods for Initial Value Problems
 using Multiquadric and Matérn Radial Basis Functions*". The project explores an alternative approach to solving IVP of the form: 
 $$u'(t) = f(u(t),t), \quad u(a) = u_0$$ 
