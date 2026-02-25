@@ -16,7 +16,7 @@ h = (b-a) / N;
 t = linspace(a, b, N+1)'; 
 u = zeros(N+1, 1); 
 u(1) = u0;
-u(2) = u_es(h);
+u(2) = u_es(t(2));
 for n = 1:N-1
     u(n+2) = u(n) + 2 * h * f(t(n+1),u(n+1));
 end
