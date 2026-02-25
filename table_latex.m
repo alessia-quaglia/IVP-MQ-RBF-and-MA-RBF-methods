@@ -35,6 +35,7 @@ for m = 1:length(met_name)
        fprintf('\\hline \n');
     end
 end
-fprintf('\\hline\n\\end{tabular}\n');
+fprintf('\\hline\n\\end{tabular}\n\\end{table}');
+
 
 
