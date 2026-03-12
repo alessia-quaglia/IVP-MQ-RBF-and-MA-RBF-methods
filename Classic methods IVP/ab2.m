@@ -28,5 +28,3 @@ for n = 2:N
     end
 end
 err = abs(u(end) - u_es(b));
-
-
